@@ -1,0 +1,37 @@
+Use theme colors as much as possible to make the extension color theme-agnostic
+See https://code.visualstudio.com/api/references/theme-color
+
+Only show labels on mouseover of node
+
+Expression nodes have value inputs and outputs only
+Routine nodes have at least a flow input and flow outputs, and possibly value inputs and outputs grouped with those flow inputs/outputs
+
+Available expressions and routines are provided by API definition files generated from the runtime and project wrappers
+
+Focus automatically moves to empty pins, and typing starts creating a node attached to that pin
+
+Like Unreal, only nodes with an input or output of a matching data type will be included in the autocomplete
+
+Nodes may have the same display name but different data types (overloading)
+
+Flow inputs and outputs can be connected in a many-to-many fashion
+Multiple outgoing connections executes all branches in parallel
+Multiple incoming connections wait until all incoming branches have completed before executing
+
+Code reuse is done via creating script-scoped functions
+Functions don't require flow pins if all children are expressions
+Open inputs and outputs are automatically suggested as candidates for being promoted to function inputs and outputs
+
+Event listeners are like routines with no inputs which are triggered by the runtime
+Script code always originates from event listeners
+Event listener attachment and detachment is automatically handled by the runtime based on the context of where the script is used
+
+There are no method functions; all functions are static and namespaced instead
+Types and typed values are black boxes whose internals cannot be manipulated directly by the script
+However, embedding contexts may specify how literal values can be entered for certain node parameters
+
+Input Types (not to be confused with actual data types):
+Number: input using number field (optionally constrained to int with step=1)
+Bool: input using checkbox
+String: input using text field
+Enum: input using dropdown list provided by data type
