@@ -1,0 +1,195 @@
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	border: 0;
+}
+
+body {
+	overflow: hidden;
+	background-color: var(--vscode-editor-background);
+	user-select: none;
+	line-height: 1.2;
+}
+
+main {
+	display: flex;
+	width: 100%;
+	height: 100%;
+	box-sizing: border-box;
+}
+
+.App {
+	display: flex;
+	flex: 1 1 0;
+	flex-direction: column;
+	background-size: 20px 20px;
+	background-image: linear-gradient(to right, var(--vscode-editor-lineHighlightBorder) 1px, transparent 1px), linear-gradient(to bottom, var(--vscode-editor-lineHighlightBorder) 1px, transparent 1px);
+	background-attachment: local;
+	position: relative;
+	overflow: scroll;
+}
+
+.Search {
+	position: absolute;
+	background-color: var(--vscode-editorSuggestWidget-background);
+	border: 1px solid var(--vscode-editorSuggestWidget-border);
+	color: var(--vscode-editorSuggestWidget-foreground);
+	border-radius: 5px;
+	padding: 5px;
+	display: flex;
+	flex-direction: column;
+}
+
+.SearchItem {
+	padding: 2px;
+	border-radius: 2px;
+	position: relative;
+}
+
+.SearchItem:hover::after {
+	position: absolute;
+	left: 0;
+	right: 0;
+	top: 0;
+	bottom: 0;
+	background-color: var(--vscode-editor-rangeHighlightBackground);
+	content: '';
+}
+
+.SearchItem.selected  {
+	background-color: var(--vscode-editor-selectionBackground);
+}
+
+.Block {
+	position: absolute;
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	background-color: var(--vscode-editorSuggestWidget-border);
+	border: 2px solid var(--vscode-editorRuler-foreground);
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+	gap: 1px;
+	min-width: max-content;
+}
+
+.Block.selected {
+	border: 2px solid var(--vscode-focusBorder);
+}
+
+.Block.ghosting {
+	opacity: 0.5;
+}
+
+.Block > label {
+	grid-column: span 3;
+	padding: 2px 4px;
+	text-align: center;
+	font-size: 90%;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+	white-space: nowrap;
+	min-width: max-content;
+}
+
+.Block > label.error {
+	color: var(--vscode-errorForeground);
+	font-style: italic;
+}
+
+.Block > div {
+	display: flex;
+	flex-direction: column;
+}
+
+.ParamGroup {
+	display: flex;
+	flex-direction: column;
+	background-color: var(--vscode-editorSuggestWidget-background);
+	border-radius: 5px;
+	box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2) inset;
+	margin-top: 2px;
+	flex: 1 0 auto;
+}
+
+.ParamGroup:first-child {
+	margin-top: 0;
+}
+
+.ParamGroup > label {
+	padding: 2px 4px;
+	font-size: 75%;
+	border-bottom: 1px solid var(--vscode-editorSuggestWidget-border);
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+	text-align: center;
+	white-space: nowrap;
+}
+
+.Param {
+	display: flex;
+}
+
+.Param > label {
+	padding: 2px 4px;
+	text-shadow: 1px 1px rgba(0, 0, 0, 0.2);
+	white-space: nowrap;
+}
+
+.Param > label.error {
+	color: var(--vscode-errorForeground);
+	font-style: italic;
+}
+
+.Param.input {
+	flex-direction: row;	
+}
+
+.Param.output {
+	flex-direction: row-reverse;
+}
+
+.Param.input > label {
+	text-align: left;
+}
+
+.Param.output > label {
+	text-align: right;
+}
+
+.Pin {
+	margin: 2px;
+	border-radius: 50%;
+	border: 2px solid currentColor;
+	width: 11px;
+	height: 11px;
+}
+
+.Pin:hover {
+	background-color: currentColor;
+}
+
+.Link {
+	position: absolute;
+}
+
+.Link svg {
+	position: absolute;
+}
+
+.Link svg line:hover {
+	opacity: 0.5;
+}
+
+.BoxSelection {
+	position: absolute;
+	border: 2px dashed var(--vscode-focusBorder);
+	background-color: var(--vscode-editor-selectionHighlightBackground);
+	pointer-events: none;
+}
+
+input, textarea {
+	border: 0;
+	color: inherit;
+	font: inherit;
+	background-color: transparent;
+}

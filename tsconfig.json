@@ -1,0 +1,30 @@
+{
+	"compilerOptions": {
+		"module": "commonjs",
+		"allowJs": true,
+		"noEmit": true,
+		"baseUrl": ".",
+		"paths": {
+			"@shared": [
+				"./shared/src"
+			]
+		}
+	},
+	"references": [
+		{
+			"path": "./shared"
+		},
+		{
+			"path": "./build"
+		},
+		{
+			"path": "./host"
+		},
+		{
+			"path": "./client"
+		}
+	],
+	"files": [
+		".eslintrc.js"
+	]
+}

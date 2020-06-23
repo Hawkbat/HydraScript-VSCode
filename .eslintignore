@@ -1,0 +1,5 @@
+node_modules
+client/out
+client/static
+host/out
+build/out

@@ -1,0 +1,39 @@
+{
+	"compilerOptions": {
+		"module": "AMD",
+		"target": "es6",
+		"outDir": "out",
+		"outFile": "out/view.js",
+		"sourceMap": true,
+		"declaration": true,
+		"declarationMap": true,
+		"strict": true,
+		"moduleResolution": "node",
+		"rootDir": "src",
+		"lib": [
+			"DOM",
+			"ESNext"
+		],
+		"jsx": "react",
+		"composite": true,
+		"baseUrl": ".",
+		"paths": {
+			"@shared": [
+				"../shared/src"
+			]
+		}
+	},
+	"include": [
+		"./src/*.ts",
+		"./src/*.tsx",
+	],
+	"exclude": [
+		"node_modules",
+		".vscode-test"
+	],
+	"references": [
+		{
+			"path": "../shared"
+		},
+	],
+}

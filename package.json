@@ -1,0 +1,65 @@
+{
+	"name": "hydrascript-vscode",
+	"displayName": "HydraScript",
+	"description": "HydraScript Node-Based Scripting Support",
+	"version": "0.0.1",
+	"publisher": "Hawkbat",
+	"engines": {
+		"vscode": "^1.44.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"activationEvents": [
+		"onCustomEditor:hydraScript.nodeView"
+	],
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/Hawkbat/HydraScript-VSCode.git"
+	},
+	"main": "./host/out/extension.js",
+	"contributes": {
+		"customEditors": [
+			{
+				"viewType": "hydraScript.nodeView",
+				"displayName": "HydraScript Editor",
+				"selector": [
+					{
+						"filenamePattern": "*.hydra.json"
+					}
+				]
+			}
+		],
+		"jsonValidation": [
+			{
+				"fileMatch": "*.hydra-lib.json",
+				"url": "./schema/out/hydra-lib.schema.json"
+			},
+			{
+				"fileMatch": "*.hydra.json",
+				"url": "./schema/out/hydra.schema.json"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -b ./ && npm run buildSchemas",
+		"buildSchemas": "node build/out/buildJsonSchemas.js",
+		"watch": "tsc -b -w ./"
+	},
+	"dependencies": {},
+	"devDependencies": {
+		"@types/node": "^12.12.0",
+		"@types/react": "^16.9.35",
+		"@types/react-dom": "^16.9.8",
+		"@types/vscode": "^1.44.0",
+		"@typescript-eslint/eslint-plugin": "^2.33.0",
+		"@typescript-eslint/parser": "^2.33.0",
+		"eslint": "^7.0.0",
+		"eslint-plugin-react": "^7.20.0",
+		"eslint-plugin-react-hooks": "^4.0.2",
+		"ts-json-schema-generator": "^0.67.1",
+		"tslint": "^5.19.0",
+		"typescript": "^3.8.3"
+	}
+}

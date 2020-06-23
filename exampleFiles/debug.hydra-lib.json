@@ -1,0 +1,59 @@
+{
+    "id": "debug",
+    "types": [],
+    "funcs": [
+        {
+            "id": "void log(string)",
+            "name": "Log to Console",
+            "inputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        },
+                        {
+                            "id": "0",
+                            "name": "msg",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ],
+            "outputs": []
+        },
+        {
+            "id": "string toString(int)",
+            "name": "int -> string",
+            "inputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "0",
+                            "name": "i",
+                            "type": "int"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "0",
+                            "name": "str",
+                            "type": "string"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

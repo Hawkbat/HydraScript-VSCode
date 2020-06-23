@@ -1,0 +1,175 @@
+{
+    "id": "math",
+    "types": [
+        {
+            "id": "string",
+            "name": "String",
+            "input": {
+                "type": "string"
+            },
+            "color": "hsl(180, 100%, 37.5%)"
+        },
+        {
+            "id": "bool",
+            "name": "Boolean",
+            "input": {
+                "type": "boolean"
+            },
+            "color": "hsl(0, 100%, 37.5%)"
+        },
+        {
+            "id": "int",
+            "name": "Integer",
+            "input": {
+                "type": "number",
+                "step": 1
+            },
+            "color": "hsl(150, 100%, 37.5%)"
+        },
+        {
+            "id": "flow",
+            "name": "Flow",
+            "color": "hsl(45, 100%, 37.5%)"
+        }
+    ],
+    "funcs": [
+        {
+            "id": "int add(int, int)",
+            "name": "int + int",
+            "inputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "0",
+                            "name": "a",
+                            "type": "int"
+                        },
+                        {
+                            "id": "1",
+                            "name": "b",
+                            "type": "int"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "0",
+                            "name": "c",
+                            "type": "int"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "if",
+            "name": "If-Then-Else",
+            "inputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "0",
+                            "name": "condition",
+                            "type": "bool"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "then",
+                    "name": "If True",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        }
+                    ]
+                },
+                {
+                    "id": "else",
+                    "name": "If False",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        }
+                    ]
+                },
+                {
+                    "id": "finally",
+                    "name": "After",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "id": "repeat(int)",
+            "name": "Repeat",
+            "inputs": [
+                {
+                    "id": "",
+                    "name": "",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        },
+                        {
+                            "id": "0",
+                            "name": "count",
+                            "type": "int"
+                        }
+                    ]
+                }
+            ],
+            "outputs": [
+                {
+                    "id": "body",
+                    "name": "Each Loop",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        },
+                        {
+                            "id": "0",
+                            "name": "index",
+                            "type": "int"
+                        }
+                    ]
+                },
+                {
+                    "id": "done",
+                    "name": "Loop Done",
+                    "params": [
+                        {
+                            "id": "-1",
+                            "name": "",
+                            "type": "flow"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
