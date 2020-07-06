@@ -50,6 +50,7 @@ export function App(props: { vscode: VsCodeApi }): JSX.Element {
 			const cmd = e.data as hs.Command
 			switch (cmd.type) {
 				case 'script-load': {
+					setBlockMoving(false) // this should be on mouseup, but the multi-frame delay introduced by postmessage causes movement to appear jittery, so we clear it here instead
 					setScript(cmd.script)
 				} break
 				case 'library-load': {
@@ -125,7 +126,6 @@ export function App(props: { vscode: VsCodeApi }): JSX.Element {
 			setMouseY(e.clientY + scrollY)
 		}
 		if (blockMoving) {
-			setBlockMoving(false)
 			if (selected.length) {
 				dispatch({
 					type: 'block-move',
